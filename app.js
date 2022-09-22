@@ -1,4 +1,5 @@
-const basicDataArgs = process.argv.slice(2, process.argv.length);
+const fs = require('fs');
+const basicDataArgs = process.argv.slice(2);
 const [title, description, installation, usage, license, contributing, tests, name, githubLink, emailAddress] = basicDataArgs;
 
 const generatePage = () => {
@@ -44,13 +45,17 @@ const generatePage = () => {
     Have any questions about this project? Please reach out! 
 
     GutHub username: ${name}
-    Link: ${githubLink}
+    Link: [https://githut.com/${githubLink}](https://githut.com/${githubLink})
     Email: ${emailAddress}
 
     `;
 }
 
-console.log(generatePage(title, description, installation, usage, license, contributing, tests, name, githubLink, emailAddress));
+fs.writeFile('./README.md', generatePage(), err => {
+    if (err) throw new Error(err);
+
+    console.log('Profolio complete! Checkout README.md to see the output!');
+});
 
 // const printTitleData = titleDataArr => {
 //     for (let i = 0; i < titleDataArr.length; i++) {
