@@ -1,5 +1,6 @@
-
-    # undefined
+const generateMarkdown = (data) => {
+    return `
+    # ${title}
 
     ## Table of Contents
 
@@ -13,34 +14,37 @@
 
     ## Description
 
-    undefined
+    ${description}
 
     ## Installation
 
-    undefined
+    ${installation}
 
     ## Usage
 
-    undefined
+    ${usage}
 
     ## License
 
-    undefined
+    ${license}
 
     ## Contributing 
 
-    undefined
+    ${contributing}
 
     ## Tests
 
-    undefined
+    ${tests}
 
     ## Questions
 
     Have any questions about this project? Please reach out! 
 
-    GutHub username: undefined
-    Link: [https://githut.com/undefined](https://githut.com/undefined)
-    Email: undefined
+    GutHub username: ${name}
+    Link: [https://githut.com/${githubLink}](https://githut.com/${githubLink})
+    Email: ${emailAddress}
 
-    
+    `;
+};
+
+module.exports = generateMarkdown;
