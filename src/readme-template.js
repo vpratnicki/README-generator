@@ -24,9 +24,9 @@ const generateMarkdown = (data) => {
 
     ${usage}
 
-    ## License
+    ## Credits
 
-    ${license}
+    ${credits}
 
     ## Contributing 
 
@@ -40,8 +40,8 @@ const generateMarkdown = (data) => {
 
     Have any questions about this project? Please reach out! 
 
-    GutHub username: ${name}
-    Link: [https://githut.com/${githubLink}](https://githut.com/${githubLink})
+    GutHub username: ${github}
+    Link: [https://githut.com/${github}](https://githut.com/${github})
     Email: ${emailAddress}
 
     `;
