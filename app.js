@@ -1,22 +1,21 @@
 const inquirer = require('inquirer');
-// const fs = require('fs');
-// const generateMarkdown = require('./src/readme-template.js');
+const fs = require('fs');
+const generateMarkdown = require('./src/readme-template.js');
 
-// const pageREADME = generateMarkdown(data);
-
-// fs.writeFile('./README.md', pageREADME, err => {
-//     if (err) throw err;
-
-//     console.log('Profolio complete! Checkout README.md to see the output!');
-// });
-
-const questions = questionsData => {
-    return inquirer
-    .prompt([
+const questions = () => {
+    return inquirer.prompt([
     {
         type: 'input',
         name: 'title',
-        message: 'What is your projects title?'
+        message: 'What is your projects title?',
+        validate: titleInput => {
+            if (titleInput) {
+                return true;
+            } else {
+                console.log('Please enter your project title!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
@@ -43,16 +42,30 @@ const questions = questionsData => {
         name: 'contributing',
         message: 'If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so.'
     },
+    {
+        type: 'confirm',
+        name: 'confirmLicense',
+        message: 'Would you like to choose a license for your application',
+        default: true
+      },
     // {
     //     type: 'checkbox',
     //     name: 'license',
     //     message: '',
-    //     choices: []
+    //     choices: ['license 1', 'license 2', 'license 3'],
+    //     when: ({ confirmLicense }) => {
+    //         if (confirmicense) {
+    //             return true;
+    //         } else {
+    //             return false;
+    //         }
+    //     }
     // },
     {
         type: 'input',
         name: 'tests',
-        message: 'Go the extra mile and write tests for your application. Then provide examples on how to run them.'    },
+        message: 'Go the extra mile and write tests for your application. Then provide examples on how to run them.'    
+    },
     {
         type: 'input',
         name: 'github',
@@ -68,7 +81,12 @@ const questions = questionsData => {
 
 
 questions()
-// .then(answers => console.log(answers))
 .then(questionsData => {
-    console.log(questionsData)
+    const pageREADME = generateMarkdown(questionsData);
+
+    fs.writeFile('./README.md', pageREADME, err => {
+      if (err) throw err;
+
+      console.log('Profolio complete! Checkout README.md to see the output!');
+    });
 });

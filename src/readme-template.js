@@ -1,6 +1,11 @@
-const generateMarkdown = (data) => {
+module.exports = templateData => {
+    console.log(templateData);
+    // destructure page data by section
+    const { ...readme } = templateData;
+
+
     return `
-    # ${title}
+    # ${readme.title}
 
     ## Table of Contents
 
@@ -14,37 +19,35 @@ const generateMarkdown = (data) => {
 
     ## Description
 
-    ${description}
+    ${readme.description}
 
     ## Installation
 
-    ${installation}
+    ${readme.installation}
 
     ## Usage
 
-    ${usage}
+    ${readme.usage}
 
     ## Credits
 
-    ${credits}
+    ${readme.credits}
 
     ## Contributing 
 
-    ${contributing}
+    ${readme.contributing}
 
     ## Tests
 
-    ${tests}
+    ${readme.tests}
 
     ## Questions
 
     Have any questions about this project? Please reach out! 
 
-    GutHub username: ${github}
-    Link: [https://githut.com/${github}](https://githut.com/${github})
-    Email: ${emailAddress}
+    GutHub username: ${readme.github}
+    Link: [https://githut.com/${readme.github}](https://githut.com/${readme.github})
+    Email: ${readme.emailAddress}
 
     `;
 };
-
-module.exports = generateMarkdown;

@@ -1,5 +1,5 @@
 
-    # undefined
+    # Readme Generator 
 
     ## Table of Contents
 
@@ -13,34 +13,34 @@
 
     ## Description
 
-    undefined
+    hfhfugh
 
     ## Installation
 
-    undefined
+    hfhghg
 
     ## Usage
 
-    undefined
+    hfhfuf
 
-    ## License
+    ## Credits
 
-    undefined
+    fhfiho
 
     ## Contributing 
 
-    undefined
+    fbyfbyfbyer
 
     ## Tests
 
-    undefined
+    yfgyfgyf
 
     ## Questions
 
     Have any questions about this project? Please reach out! 
 
-    GutHub username: undefined
-    Link: [https://githut.com/undefined](https://githut.com/undefined)
-    Email: undefined
+    GutHub username: vpratniki
+    Link: [https://githut.com/vpratniki](https://githut.com/vpratniki)
+    Email: v@pratnicki.net
 
     
