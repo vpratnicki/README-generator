@@ -48,19 +48,19 @@ const questions = () => {
         message: 'Would you like to choose a license for your application',
         default: true
       },
-    // {
-    //     type: 'checkbox',
-    //     name: 'license',
-    //     message: '',
-    //     choices: ['license 1', 'license 2', 'license 3'],
-    //     when: ({ confirmLicense }) => {
-    //         if (confirmicense) {
-    //             return true;
-    //         } else {
-    //             return false;
-    //         }
-    //     }
-    // },
+    {
+        type: 'checkbox',
+        name: 'license',
+        message: 'Select a license for this project:',
+        choices: ['license 1', 'license 2', 'license 3'],
+        when: ({ confirmLicense }) => {
+            if (confirmLicense) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
     {
         type: 'input',
         name: 'tests',

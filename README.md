@@ -1,5 +1,5 @@
 
-    # Readme Generator 
+    # README generator
 
     ## Table of Contents
 
@@ -13,34 +13,39 @@
 
     ## Description
 
-    hfhfugh
+    Here is a description
 
     ## Installation
 
-    hfhghg
+    none
 
     ## Usage
 
-    hfhfuf
+    n/a
 
     ## Credits
 
-    fhfiho
+    n/a
 
     ## Contributing 
 
-    fbyfbyfbyer
+    n/a
 
     ## Tests
 
-    yfgyfgyf
+    n/a
+
+    
+    ## License
+    license 1
+    
 
     ## Questions
 
     Have any questions about this project? Please reach out! 
 
-    GutHub username: vpratniki
-    Link: [https://githut.com/vpratniki](https://githut.com/vpratniki)
+    GutHub username: vpratnicki
+    Link: [https://githut.com/vpratnicki](https://githut.com/vpratnicki)
     Email: v@pratnicki.net
 
     

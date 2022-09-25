@@ -1,7 +1,43 @@
+// function that returns the license badge based on which license is passed in
+// const renderLicenseBadge = licenseBadge => {
+//     if (!licenseBadge) {
+//         return '';
+//     }
+
+//     return `
+    
+//     `
+// };
+
+// function that returns the license section of README
+const renderLicenseSection = license => {
+    if (!license) {
+        return '';
+    }
+
+    return `
+    ## License
+    ${license}
+    `
+};
+
+// function that returns the license link
+// const renderLicenseLink = licenseLink => {
+//     if (!licenseLink) {
+//         return '';
+//     }
+
+//     return `
+    
+//     `
+// };
+
+
+
 module.exports = templateData => {
     console.log(templateData);
     // destructure page data by section
-    const { ...readme } = templateData;
+    const { license, ...readme } = templateData;
 
 
     return `
@@ -40,6 +76,8 @@ module.exports = templateData => {
     ## Tests
 
     ${readme.tests}
+
+    ${renderLicenseSection(license)}
 
     ## Questions
 
