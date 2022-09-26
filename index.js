@@ -1,5 +1,5 @@
+const {writeFile} = require('./utils/generate-README.js');
 const inquirer = require('inquirer');
-const fs = require('fs');
 const generateMarkdown = require('./src/readme-template.js');
 
 const questions = () => {
@@ -82,11 +82,25 @@ const questions = () => {
 
 questions()
 .then(questionsData => {
-    const pageREADME = generateMarkdown(questionsData);
-
-    fs.writeFile('./README.md', pageREADME, err => {
-      if (err) throw err;
-
-      console.log('Profolio complete! Checkout README.md to see the output!');
-    });
+    return generateMarkdown(questionsData);
+})
+.then(pageREADME => {
+    return writeFile(pageREADME);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse);
+})
+.catch(err => {
+    console.log(err);
 });
+
+
+// .then(questionsData => {
+//     const pageREADME = generateMarkdown(questionsData);
+
+//     fs.writeFile('./dist/README.md', pageREADME, err => {
+//       if (err) throw err;
+
+//       console.log('Profolio complete! Checkout README.md to see the output!');
+//     });
+// });

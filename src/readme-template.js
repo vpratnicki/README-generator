@@ -15,10 +15,17 @@ const renderLicenseSection = license => {
         return '';
     }
 
-    return `
-    ## License
-    ${license}
-    `
+    return `## License
+
+    ${license}`
+};
+
+const renderLicenseTableOfContents = license => {
+    if (!license) {
+        return '';
+    }
+
+    return `- [License](#license)`
 };
 
 // function that returns the license link
@@ -48,7 +55,7 @@ module.exports = templateData => {
     - [Description](#description)
     - [Installation](#installation)
     - [Usage](#usage)
-    - [License](#license)
+    ${renderLicenseTableOfContents(license)}
     - [Contributing](#contributing)
     - [Tests](#tests)
     - [Questions](#questions)
