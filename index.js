@@ -52,7 +52,7 @@ const questions = () => {
         type: 'checkbox',
         name: 'license',
         message: 'Select a license for this project:',
-        choices: ['license 1', 'license 2', 'license 3'],
+        choices: ['GNU General Public License v3.0', 'Apache License v2.0', 'MIT License'],
         when: ({ confirmLicense }) => {
             if (confirmLicense) {
                 return true;

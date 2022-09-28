@@ -1,13 +1,16 @@
-// function that returns the license badge based on which license is passed in
-// const renderLicenseBadge = licenseBadge => {
-//     if (!licenseBadge) {
-//         return '';
-//     }
+//function that returns the license badge based on which license is passed in
+const renderLicenseBadge = license => {
+    console.log(license);
+    switch (license[0]) {
+        case 'GNU General Public License v3.0':
+            return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+        case 'Apache v2.0':
+            return `[![Licence: Apache 2](https://img.shields.io/badge/License-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)`; 
 
-//     return `
-    
-//     `
-// };
+        default: 
+            return '';
+    }
+};
 
 // function that returns the license section of README
 const renderLicenseSection = license => {
@@ -17,28 +20,16 @@ const renderLicenseSection = license => {
 
     return `## License
 
-    ${license}`
+    This project is licensed under the terms of the ${license}`
 };
 
 const renderLicenseTableOfContents = license => {
-    if (!license) {
+    if (!license.length) {
         return '';
     }
 
     return `- [License](#license)`
 };
-
-// function that returns the license link
-// const renderLicenseLink = licenseLink => {
-//     if (!licenseLink) {
-//         return '';
-//     }
-
-//     return `
-    
-//     `
-// };
-
 
 
 module.exports = templateData => {
@@ -48,51 +39,53 @@ module.exports = templateData => {
 
 
     return `
-    # ${readme.title}
+${renderLicenseBadge(license)}
 
-    ## Table of Contents
+# ${readme.title}
 
-    - [Description](#description)
-    - [Installation](#installation)
-    - [Usage](#usage)
-    ${renderLicenseTableOfContents(license)}
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-    - [Questions](#questions)
+## Table of Contents
 
-    ## Description
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+${renderLicenseTableOfContents(license)}
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-    ${readme.description}
+## Description
 
-    ## Installation
+${readme.description}
 
-    ${readme.installation}
+## Installation
 
-    ## Usage
+${readme.installation}
 
-    ${readme.usage}
+## Usage
 
-    ## Credits
+${readme.usage}
 
-    ${readme.credits}
+## Credits
 
-    ## Contributing 
+${readme.credits}
 
-    ${readme.contributing}
+## Contributing 
 
-    ## Tests
+${readme.contributing}
 
-    ${readme.tests}
+## Tests
 
-    ${renderLicenseSection(license)}
+${readme.tests}
 
-    ## Questions
+${renderLicenseSection(license)}
 
-    Have any questions about this project? Please reach out! 
+## Questions
 
-    GutHub username: ${readme.github}
-    Link: [https://githut.com/${readme.github}](https://githut.com/${readme.github})
-    Email: ${readme.emailAddress}
+Have any questions about this project? Please reach out! 
 
-    `;
+GutHub username: ${readme.github}
+Link: [https://githut.com/${readme.github}](https://githut.com/${readme.github})
+Email: ${readme.emailAddress}
+
+`;
 };
