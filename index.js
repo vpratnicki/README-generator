@@ -7,7 +7,7 @@ const questions = () => {
     {
         type: 'input',
         name: 'title',
-        message: 'What is your projects title?',
+        message: 'What is your projects title? (required)',
         validate: titleInput => {
             if (titleInput) {
                 return true;
@@ -43,23 +43,10 @@ const questions = () => {
         message: 'If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so.'
     },
     {
-        type: 'confirm',
-        name: 'confirmLicense',
-        message: 'Would you like to choose a license for your application',
-        default: true
-      },
-    {
         type: 'checkbox',
         name: 'license',
         message: 'Select a license for this project:',
-        choices: ['GNU General Public License v3.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'Mozilla Public License 2.0' ],
-        when: ({ confirmLicense }) => {
-            if (confirmLicense) {
-                return true;
-            } else {
-                return false;
-            }
-        }
+        choices: ['GNU General Public License v3.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'Mozilla Public License 2.0' ]
     },
     {
         type: 'input',

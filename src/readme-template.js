@@ -18,12 +18,11 @@ const renderLicenseBadge = license => {
     }
 };
 
-// function that returns the license section of README
+// function that returns the license section of the README
 const renderLicenseSection = license => {
     if (!license) {
         return '';
     }
-
     return `## License
 
 This project is licensed under the terms of the ${license}.`
@@ -49,19 +48,18 @@ ${renderLicenseBadge(license)}
 
 # ${readme.title}
 
+## Description
+
+${readme.description}
+
 ## Table of Contents
 
-- [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
 ${renderLicenseTableOfContents(license)}
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
-
-## Description
-
-${readme.description}
 
 ## Installation
 
@@ -90,7 +88,9 @@ ${renderLicenseSection(license)}
 Have any questions about this project? Please reach out! 
 
 GutHub username: ${readme.github}
-Link: [https://githut.com/${readme.github}](https://githut.com/${readme.github})
+
+Link: [https://github.com/${readme.github}](https://github.com/${readme.github})
+
 Email: ${readme.emailAddress}
 
 `;
