@@ -32,7 +32,7 @@ To use this app, type ‘node index’ to invoke the application from the comman
 
 [![Screen shot of readme questions](/assets/img/screenshot1.png)]
 
-For an example of how to use this app, view the demo:
+### [View the demo](https://watch.screencastify.com/v/u5k27KVcqImUYWnWr46K)
 
 
 
